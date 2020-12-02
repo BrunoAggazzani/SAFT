@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const mysql = require('mysql');
 const myConnection = require('express-myconnection');
 const app = express();
-var ws = require('express-ws')(app);
+var ws = require('express-ws')(app); 
 
 //importando rutas
 const customerRoutes = require('./src/ruotes/customers');
@@ -27,7 +27,7 @@ app.use(myConnection(mysql, {
 }, 'single'));
 
 //rutas
-app.use('/', customerRoutes);
+app.use('/', customerRoutes );
 
 //static files
 app.use(express.static(path.join(__dirname, 'public')));
